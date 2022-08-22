@@ -5,16 +5,17 @@ class ModelName(models.Model):
     _name = 'minimarket.pengguna'
     _description = 'Description'
 
-    id = fields.Char(
-        string="ID"
-    )
-    userid = fields.Integer(
-        string='User id',
+    userid_ids = fields.One2many(
+        comodel_name='minimarket.pembelian',
+        inverse_name='user_id',
+        string='User Ids',
         required=False)
+    id = fields.Char(
+        string="ID")
     passid = fields.Integer(
         string='Passid',
         required=False)
-    nana = fields.Char(
+    nama = fields.Char(
         string='Nama',
         required=False)
     level = fields.Integer(

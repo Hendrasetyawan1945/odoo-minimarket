@@ -5,8 +5,8 @@ class pelanggan(models.Model):
     _name = 'minimarket.pelanggan'
     _description = 'Description pelanggan'
 
-    kode_pelangganids = fields.One2many(
-        comodel_name='minimarket.pelanggan',
+    kode_pelanggan_ids = fields.One2many(
+        comodel_name='minimarket.penjualan',
         inverse_name='kode_pelanggan',
         string='Kode_pelanggan IDs',
         required=False)

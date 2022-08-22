@@ -17,7 +17,7 @@ class penjualan(models.Model):
     total_bayar = fields.Integer(
         string='Total_bayar',
         required=False)
-    kode_pelanggan= fields.Many2one(
+    kode_pelanggan = fields.Many2one(
         comodel_name='minimarket.pelanggan',
         string='Kode Pelanggan',
         required=False)
