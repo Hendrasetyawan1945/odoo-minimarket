@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="produk_view_tree" model="ir.ui.view">
+        <field name="name">produk_view_tree</field>
+        <field name="model">minimarket.produk</field>
+        <field name="arch" type="xml">
+            <tree string="produk_tree">
+                <field name="kode_produk_ids"/>
+                <field name="kode_grup"/>
+                <field name="nama_produk"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="produk_view_form" model="ir.ui.view">
+        <field name="name">produk_view_form</field>
+        <field name="model">minimarket.produk</field>
+        <field name="arch" type="xml">
+            <form string="produk_form">
+                <sheet>
+                    <group>
+                        <field name="kode_produk_ids"/>
+                         <field name="kode_grup"/>
+                        <field name="nama_produk"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="produk_action" model="ir.actions.act_window">
+        <field name="name">Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.produk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="produk_categ"
+              name="Produk"
+              parent="barang_root"
+              action="produk_action"
+              sequence="20"/>
+</odoo>

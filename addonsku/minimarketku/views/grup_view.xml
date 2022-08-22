@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="grub_view_tree" model="ir.ui.view">
+        <field name="name">grub_view_tree</field>
+        <field name="model">minimarket.grup</field>
+        <field name="arch" type="xml">
+            <tree string="grub_tree">
+                <field name="kode_grup_ids"/>
+                <field name="nama_grup"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="grub_view_form" model="ir.ui.view">
+        <field name="name">grub_view_form</field>
+        <field name="model">minimarket.grup</field>
+        <field name="arch" type="xml">
+            <form string="grub_form">
+                <sheet>
+                    <group>
+                        <field name="kode_grup_ids"/>
+                        <field name="nama_grup"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="grub_action" model="ir.actions.act_window">
+        <field name="name">Grub</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.grup</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="grup_categ"
+              name="Grub"
+              parent="barang_root"
+              action="grub_action"
+              sequence="30"/>
+</odoo>
