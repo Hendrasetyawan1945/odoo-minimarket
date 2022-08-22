@@ -18,6 +18,9 @@ class pembelian(models.Model):
         comodel_name='minimarket.pemasok',
         string='Kode_pemasok',
         required=False)
+    total = fields.Integer(
+        string='Total',
+        required=False)
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',
         string='User id',

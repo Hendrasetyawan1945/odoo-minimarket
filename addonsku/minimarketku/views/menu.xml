@@ -13,12 +13,12 @@
               name="Penjualan"
               parent="minimarket_root"
               sequence="20"/>
-    <menuitem id="barang_root"
-              name="Barang"
+    <menuitem id="pembelian_root"
+              name="Pembelian"
               parent="minimarket_root"
               sequence="30"/>
-    <menuitem id="pembelian_root"
-              name="Pengguna"
+    <menuitem id="barang_root"
+              name="Barang"
               parent="minimarket_root"
               sequence="40"/>
     <menuitem id="pengguna_root"

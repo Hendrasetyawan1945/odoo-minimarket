@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pemasok_view_tree" model="ir.ui.view">
+        <field name="name">pemasok_view_tree</field>
+        <field name="model">minimarket.pemasok</field>
+        <field name="arch" type="xml">
+            <tree string="pemasok_tree">
+                <field name="kode_pemasok_ids"/>
+                <field name="nama_pemasok"/>
+                <field name="alamat"/>
+                <field name="kota"/>
+                <field name="provinsi"/>
+                <field name="no_tlpn"/>
+                <field name="no_fak"/>
+                <field name="kontak_kp"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pemasok_view_form" model="ir.ui.view">
+        <field name="name">pemasok_view_form</field>
+        <field name="model">minimarket.pemasok</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <group>
+                        <field name="kode_pemasok_ids"/>
+                        <field name="nama_pemasok"/>
+                        <field name="kontak_kp"/>
+                    </group>
+                    <group>
+                        <field name="alamat"/>
+                        <field name="kota"/>
+                        <field name="provinsi"/>
+                        <field name="no_tlpn"/>
+                        <field name="no_fak"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pemasok_action" model="ir.actions.act_window">
+        <field name="name">pemasok</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.pemasok</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="pemasok_categ"
+              name="Pemasok"
+              parent="pembelian_root"
+              action="pemasok_action"
+              sequence="30"/>
+</odoo>
