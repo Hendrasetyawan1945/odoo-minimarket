@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_minimarket_pelanggan,access.minimarket.pelanggan,model_minimarket_pelanggan,,1,1,1,1
+access_minimarket_pengguna,access.minimarket.pengguna,model_minimarket_pengguna,,1,1,1,1
+access_minimarket_penjualan,access.minimarket.penjualan,model_minimarket_penjualan,,1,1,1,1
+access_minimarket_penjualandetail,access.minimarket.penjualandetail,model_minimarket_penjualandetail,,1,1,1,1
+
+access_minimarket_barang,access.minimarket.barang,model_minimarket_barang,,1,1,1,1
+access_minimarket_grup,access.minimarket.grup,model_minimarket_grup,,1,1,1,1
+access_minimarket_produk,access.minimarket.produk,model_minimarket_produk,,1,1,1,1
+access_minimarket_pembelian,access.minimarket.pembelian,model_minimarket_pembelian,,1,1,1,1
+access_minimarket_pembeliandetail,access.minimarket.pembeliandetail,model_minimarket_pembeliandetail,,1,1,1,1
+access_minimarket_pemasok,access.minimarket.pemasok,model_minimarket_pemasok,,1,1,1,1
