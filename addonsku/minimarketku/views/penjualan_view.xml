@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="penjualan_view_tree" model="ir.ui.view">
+        <field name="name">penjualan_view_tree</field>
+        <field name="model">minimarket.penjualan</field>
+        <field name="arch" type="xml">
+            <tree string="penjualan_tree">
+                <field name="no_notaids"/>
+                <field name="tgl_nota"/>
+                <field name="total_bayar"/>
+                <field name="kode_pelanggan"/>
+            </tree>
+        </field>
+    </record>
+    <record id="penjualan_view_form" model="ir.ui.view">
+        <field name="name">penjualan_view_form</field>
+        <field name="model">minimarket.penjualan</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <group>
+                        <field name="no_notaids"/>
+                        <field name="tgl_nota"/>
+                        <field name="total_bayar"/>
+                        <field name="kode_pelanggan"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="penjualan_action" model="ir.actions.act_window">
+        <field name="name">Penjualan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.penjualan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="penjualan_categ"
+              name="Penjualan"
+              parent="penjualan_root"
+              action="penjualan_action"
+              sequence="10"/>
+</odoo>

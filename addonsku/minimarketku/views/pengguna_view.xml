@@ -6,8 +6,8 @@
         <field name="model">minimarket.pengguna</field>
         <field name="arch" type="xml">
             <tree string="_tree">
-                <field name="id"/>
                 <field name="userid_ids"/>
+                <field name="id"/>
                 <field name="passid"/>
                 <field name="nama"/>
                 <field name="level"/>
@@ -22,11 +22,9 @@
             <form string="pengguna_form">
                 <sheet>
                     <group>
-                        <field name="id"/>
                         <field name="userid_ids"/>
+                        <field name="id"/>
                         <field name="passid"/>
-                    </group>
-                    <group>
                         <field name="nama"/>
                         <field name="level"/>
                     </group>
@@ -44,7 +42,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pengguna_categ"
               name="Pengguana Minimarket"
-              parent="pengguna_root"
+              parent="minimarket_root"
               action="pengguna_action"
-              sequence="10"/>
+              sequence="50"/>
 </odoo>

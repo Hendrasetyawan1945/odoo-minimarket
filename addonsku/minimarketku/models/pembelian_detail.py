@@ -15,6 +15,7 @@ class pembelian_detail(models.Model):
         string='Kode_barang_ids',
         required=False)
     harga_beli = fields.Integer(
+        compute="_compute_hargabeli",
         string='Harga_beli',
         required=False)
     jumlah = fields.Integer(
@@ -23,3 +24,11 @@ class pembelian_detail(models.Model):
     subtotal = fields.Integer(
         string='Subtotal',
         required=False)
+
+
+    @api.depends('harga_beli')
+    def _compute_hargabeli(self):
+        for a in self:
+            a.harga_beli = a.kode_barang_ids.harga_beli
+
+

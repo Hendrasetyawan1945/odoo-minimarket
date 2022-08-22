@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pelanggan_view_tree" model="ir.ui.view">
+        <field name="name">pelanggan_view_tree</field>
+        <field name="model">minimarket.pelanggan</field>
+        <field name="arch" type="xml">
+            <tree string="pelanggan_tree">
+                <field name="kode_pelanggan_ids"/>
+                <field name="nama_pelanggan"/>
+                <field name="alamat"/>
+                <field name="no_tlpn"/>
+            </tree>
+        </field>
+    </record>
+    <record id="pelanggan_view_form" model="ir.ui.view">
+        <field name="name">pelanggan_view_form</field>
+        <field name="model">minimarket.pelanggan</field>
+        <field name="arch" type="xml">
+            <form string="pelanggan_form">
+                <sheet>
+                    <group>
+                        <field name="kode_pelanggan_ids"/>
+                        <field name="nama_pelanggan"/>
+                        <field name="alamat"/>
+                        <field name="no_tlpn"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+   <record id="pelanggan_action" model="ir.actions.act_window">
+       <field name="name">Pelanggan</field>
+       <field name="type">ir.actions.act_window</field>
+       <field name="res_model">minimarket.pelanggan</field>
+       <field name="view_mode">tree,form</field>
+   </record>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="pelangganmenu_categ"
+              name="Pelanggan"
+              parent="minimarket_root"
+              action="pelanggan_action"
+              sequence="10"/>
+</odoo>

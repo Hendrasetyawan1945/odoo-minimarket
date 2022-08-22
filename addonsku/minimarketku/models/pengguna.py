@@ -11,7 +11,8 @@ class ModelName(models.Model):
         string='User Ids',
         required=False)
     id = fields.Char(
-        string="ID")
+        string='Id', 
+        required=False)
     passid = fields.Integer(
         string='Passid',
         required=False)

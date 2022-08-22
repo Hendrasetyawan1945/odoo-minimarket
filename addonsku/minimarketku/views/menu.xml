@@ -10,17 +10,21 @@
               parent="minimarket_root"
               sequence="10"/>
     <menuitem id="penjualan_root"
-              name="Pelanggan"
-              parent="minimarket_root"
-              sequence="20"/>
-    <menuitem id="penjualan_root"
               name="Penjualan"
               parent="minimarket_root"
+              sequence="20"/>
+    <menuitem id="barang_root"
+              name="Barang"
+              parent="minimarket_root"
               sequence="30"/>
-    <menuitem id="pengguna_root"
+    <menuitem id="pembelian_root"
               name="Pengguna"
               parent="minimarket_root"
               sequence="40"/>
+    <menuitem id="pengguna_root"
+              name="Pengguna"
+              parent="minimarket_root"
+              sequence="50"/>
 
 
 </odoo>
