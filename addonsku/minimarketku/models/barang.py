@@ -9,20 +9,21 @@ class barang(models.Model):
         comodel_name='minimarket.penjualandetail',
         string='Kode_barang',
         required=False)
+
     kode_produk = fields.Many2one(
         comodel_name='minimarket.produk',
         string='Kode_produk',
         required=False)
+        
     nama_barang = fields.Char(
         string='Nama_barang', 
         required=False)
     satuan = fields.Selection(
         string='Satuan',
         selection=[('unit', 'Unit'),
-                   ('dus', 'Dus'),
-                   ('lusin', 'Lusin'),
-                   ('meter', 'Meter'),
-                   ],
+                ('dus', 'Dus'),
+                ('lusin', 'Lusin'),
+                ('meter', 'Meter'), ],
         required=False, )
     harga_beli = fields.Integer(
         string='Harga_beli', 

@@ -5,7 +5,6 @@
         <field name="model">minimarket.grup</field>
         <field name="arch" type="xml">
             <tree string="grub_tree">
-                <field name="kode_grup_ids"/>
                 <field name="nama_grup"/>
             </tree>
         </field>
@@ -18,23 +17,33 @@
             <form string="grub_form">
                 <sheet>
                     <group>
-                        <field name="kode_grup_ids"/>
                         <field name="nama_grup"/>
                     </group>
+                    <notebook colspan='8'>
+                        <page name="Grup" string="Grup">
+                            <field name="kode_grup_ids">
+                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="kode_grup"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+    
     <record id="grub_action" model="ir.actions.act_window">
         <field name="name">Grub</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">minimarket.grup</field>
         <field name="view_mode">tree,form</field>
     </record>
+
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="grup_categ"
-              name="Grub"
-              parent="barang_root"
-              action="grub_action"
-              sequence="30"/>
+            name="Grub"
+            parent="barang_root"
+            action="grub_action"
+            sequence="30"/>
 </odoo>

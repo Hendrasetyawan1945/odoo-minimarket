@@ -5,12 +5,12 @@
         <field name="model">minimarket.produk</field>
         <field name="arch" type="xml">
             <tree string="produk_tree">
-                <field name="kode_produk_ids"/>
                 <field name="kode_grup"/>
                 <field name="nama_produk"/>
             </tree>
         </field>
     </record>
+
 
     <record id="produk_view_form" model="ir.ui.view">
         <field name="name">produk_view_form</field>
@@ -19,15 +19,23 @@
             <form string="produk_form">
                 <sheet>
                     <group>
-                        <field name="kode_produk_ids"/>
-                         <field name="kode_grup"/>
+                        <field name="kode_grup"/>
                         <field name="nama_produk"/>
-
                     </group>
+                    <notebook colspan='8'>
+                        <page name="produk" string="nama produk">
+                            <field name="kode_produk_ids">
+                                <tree create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="kode_produk"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+    
     <record id="produk_action" model="ir.actions.act_window">
         <field name="name">Produk</field>
         <field name="type">ir.actions.act_window</field>

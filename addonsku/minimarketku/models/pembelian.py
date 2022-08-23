@@ -25,3 +25,8 @@ class pembelian(models.Model):
         comodel_name='minimarket.pengguna',
         string='User id',
         required=False)
+
+
+    
+    
+    
