@@ -6,9 +6,9 @@
         <field name="arch" type="xml">
             <tree string="penjualan_tree">
 <!--                <field name="no_notaids"/>-->
+                <field name="kode_pelanggan"/>
                 <field name="tgl_nota"/>
                 <field name="total_bayar"/>
-                <field name="kode_pelanggan"/>
             </tree>
         </field>
     </record>
@@ -19,12 +19,20 @@
             <form string="_form">
                 <sheet>
                     <group>
-                        <field name="no_notaids"/>
+<!--                        <field name="no_notaids"/>-->
+                        <field name="kode_pelanggan"/>
                         <field name="tgl_nota"/>
                         <field name="total_bayar"/>
-                        <field name="kode_pelanggan"/>
                     </group>
-
+                    <notebook colspan='8'>
+                        <page name="name" string="No Nota Pembayaran">
+                            <field name="no_notaids">
+                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="nota_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
