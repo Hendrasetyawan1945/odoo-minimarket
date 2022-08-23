@@ -5,7 +5,8 @@
         <field name="model">minimarket.pemasok</field>
         <field name="arch" type="xml">
             <tree string="pemasok_tree">
-                <field name="kode_pemasok_ids"/>
+                <field name="kode_pemasok"/>
+                <field name="kode_pembelian_ids"/>
                 <field name="nama_pemasok"/>
                 <field name="alamat"/>
                 <field name="kota"/>
@@ -24,7 +25,7 @@
             <form string="_form">
                 <sheet>
                     <group>
-                        <field name="kode_pemasok_ids"/>
+                        <field name="kode_pemasok"/>
                         <field name="nama_pemasok"/>
                         <field name="kontak_kp"/>
                     </group>
@@ -35,6 +36,15 @@
                         <field name="no_tlpn"/>
                         <field name="no_fak"/>
                     </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="Pembelian">
+                            <field name="kode_pembelian_ids">
+                                <tree string="Pembelian" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="kode_pemasok"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

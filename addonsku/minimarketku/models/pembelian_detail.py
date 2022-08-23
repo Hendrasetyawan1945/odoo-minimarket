@@ -4,12 +4,16 @@ from odoo import fields, models, api
 class pembelian_detail(models.Model):
     _name = 'minimarket.pembeliandetail'
     _description = 'Description'
+    _rec_name = 'no_pembelian'
 
-    no_masuk = fields.Many2one(
-        comodel_name='minimarket.pembelian',
+    no_masuk = fields.Char(
         string='No_masuk',
         required=False)
-    kode_barang_ids = fields.One2many(
+    no_pembelian = fields.Many2one(
+        comodel_name='minimarket.pembelian',
+        string='No_pembelian',
+        required=False)
+    kode_barang_ids = fields.Many2one(
         comodel_name='minimarket.barang',
         inverse_name='kode_barang',
         string='Kode_barang_ids',

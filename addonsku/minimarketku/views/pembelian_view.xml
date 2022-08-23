@@ -5,9 +5,9 @@
         <field name="model">minimarket.pembelian</field>
         <field name="arch" type="xml">
             <tree string="pembelian_tree">
-                <field name="no_masuk_ids"/>
-                <field name="tgl_masuk"/>
+                <!-- <field name="no_masuk_ids"/> -->
                 <field name="kode_pemasok"/>
+                <field name="tgl_masuk"/>
                 <field name="total"/>
                 <field name="user_id"/>
             </tree>
@@ -21,12 +21,21 @@
             <form string="pembelian_form">
                 <sheet>
                     <group>
-                        <field name="no_masuk_ids"/>
-                        <field name="tgl_masuk"/>
+                        <!-- <field name="no_masuk_ids"/> -->
                         <field name="kode_pemasok"/>
+                        <field name="tgl_masuk"/>
                         <field name="total"/>
                         <field name="user_id"/>
                     </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="No Masuk">
+                            <field name="no_masuk_ids">
+                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="no_masuk"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
