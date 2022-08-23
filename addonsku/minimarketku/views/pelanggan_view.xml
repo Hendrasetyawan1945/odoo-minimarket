@@ -5,7 +5,7 @@
         <field name="model">minimarket.pelanggan</field>
         <field name="arch" type="xml">
             <tree string="pelanggan_tree">
-                <field name="kode_pelanggan_ids"/>
+                <field name="kode_pelanggan"/>
                 <field name="nama_pelanggan"/>
                 <field name="alamat"/>
                 <field name="no_tlpn"/>
@@ -19,11 +19,20 @@
             <form string="pelanggan_form">
                 <sheet>
                     <group>
-                        <field name="kode_pelanggan_ids"/>
+                        <field name="kode_pelanggan"/>
                         <field name="nama_pelanggan"/>
                         <field name="alamat"/>
                         <field name="no_tlpn"/>
                     </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="Penjualan">
+                            <field name="pelanggan_ids">
+                                <tree string="Penjualan" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="kode_pelanggan"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

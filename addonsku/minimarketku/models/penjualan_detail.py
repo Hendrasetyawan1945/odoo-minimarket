@@ -4,7 +4,7 @@ from odoo import fields, models, api
 class penjualandetail(models.Model):
     _name = 'minimarket.penjualandetail'
     _description = 'Description penjualan detail'
-    #_rec_name = 'kode_barang_ids'
+    _rec_name = 'kode_barang_ids'
 
     nota_id = fields.Char(
         string='Nota_id',

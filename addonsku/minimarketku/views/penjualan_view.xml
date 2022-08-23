@@ -5,7 +5,7 @@
         <field name="model">minimarket.penjualan</field>
         <field name="arch" type="xml">
             <tree string="penjualan_tree">
-                <field name="no_notaids"/>
+<!--                <field name="no_notaids"/>-->
                 <field name="tgl_nota"/>
                 <field name="total_bayar"/>
                 <field name="kode_pelanggan"/>
@@ -24,6 +24,7 @@
                         <field name="total_bayar"/>
                         <field name="kode_pelanggan"/>
                     </group>
+
                 </sheet>
             </form>
         </field>

@@ -4,12 +4,14 @@ from odoo import fields, models, api
 class penjualan(models.Model):
     _name = 'minimarket.penjualan'
     _description = 'Description'
+   # _rec_name = 'kode_pelanggan'
 
     no_notaids = fields.One2many(
         comodel_name='minimarket.penjualandetail',
         inverse_name='nota_id',
         string='No Nota ids',
         required=False)
+
     tgl_nota = fields.Datetime(
         string='Tanggal Nota',
         required=False,
