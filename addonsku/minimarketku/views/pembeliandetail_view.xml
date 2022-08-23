@@ -7,6 +7,7 @@
             <tree string="pembeliandetail_tree">
                 <field name="no_masuk"/>
                 <field name="kode_barang_ids"/>
+                <field name="nama_barangpembelian"/>
                 <field name="harga_beli"/>
                 <field name="jumlah"/>
                 <field name="subtotal"/>
@@ -24,6 +25,7 @@
                     <group>
                         <field name="no_masuk"/>
                         <field name="kode_barang_ids"/>
+                        <field name="nama_barangpembelian"/>
                         <field name="harga_beli"/>
                         <field name="jumlah"/>
                         <field name="subtotal"/>
