@@ -4,9 +4,9 @@ from odoo import fields, models, api
 class barang(models.Model):
     _name = 'minimarket.barang'
     _description = 'Description'
+    _rec_name = 'kode_barang'
 
-    kode_barang = fields.Many2one(
-        comodel_name='minimarket.penjualandetail',
+    kode_barang = fields.Char(
         string='Kode_barang',
         required=False)
 
@@ -14,9 +14,14 @@ class barang(models.Model):
         comodel_name='minimarket.produk',
         string='Kode_produk',
         required=False)
-        
+
+    keterangan_produk = fields.Char(
+        string='Nama Produk',
+        compute="_compute_produk",
+        required=False)
+
     nama_barang = fields.Char(
-        string='Nama_barang', 
+        string='Nama_barang',
         required=False)
     satuan = fields.Selection(
         string='Satuan',
@@ -35,4 +40,11 @@ class barang(models.Model):
     stok = fields.Integer(
         string='Stok',
         required=False)
+    kadaluarsa = fields.Date(
+        string='Kadaluarsa', 
+        required=False)
 
+    @api.depends('kode_produk')
+    def _compute_produk(self):
+        for a in self:
+            a.keterangan_produk = a.kode_produk.nama_produk
