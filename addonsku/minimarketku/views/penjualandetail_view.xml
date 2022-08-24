@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <tree string="penjualan_tree">
                 <field name="nota_id"/>
-                <field name="no_nota_id"/>
+                <field name="no_penjualan"/>
                 <field name="kode_barang_ids"/>
                 <field name="nama_barangpenjualan"/>
                 <field name="harga_jual"/>
@@ -23,7 +23,7 @@
                 <sheet>
                     <group>
                         <field name="nota_id"/>
-                        <field name="no_nota_id"/>
+                        <field name="no_penjualan"/>
                         <field name="kode_barang_ids"/>
                         <field name="nama_barangpenjualan"/>
                         <field name="harga_jual"/>

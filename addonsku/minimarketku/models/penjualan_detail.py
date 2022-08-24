@@ -5,15 +5,15 @@ class penjualandetail(models.Model):
     _name = 'minimarket.penjualandetail'
     _description = 'Description penjualan detail'
     _rec_name = 'kode_barang_ids'
-    _rec_name = 'no_nota_id'
+    #_rec_name = 'no_nota_id'
 
     nota_id = fields.Char(
-        # comodel_name='minimarket.penjualan',
+        comodel_name='minimarket.penjualan',
         string='Nota_id',
         required=False)
-    no_nota_id = fields.Many2one(
+    no_penjualan = fields.Many2one(
         comodel_name='minimarket.penjualan',
-        string='Kode Pelanggan',
+        string='Kode penjualan',
         required=False)
     kode_barang_ids = fields.Many2one(
         comodel_name='minimarket.barang',
