@@ -8,6 +8,7 @@ class penjualandetail(models.Model):
     _rec_name = 'no_nota_id'
 
     nota_id = fields.Char(
+        # comodel_name='minimarket.penjualan',
         string='Nota_id',
         required=False)
     no_nota_id = fields.Many2one(

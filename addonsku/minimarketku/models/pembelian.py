@@ -4,7 +4,7 @@ from odoo import fields, models, api
 class pembelian(models.Model):
     _name = 'minimarket.pembelian'
     _description = 'Description'
-    #_rec_name = 'no_masuk_ids'
+    _rec_name = 'kode_pemasok'
 
 
     no_masuk_ids = fields.One2many(
@@ -30,3 +30,6 @@ class pembelian(models.Model):
         string='User id',
         required=False)
 
+
+    
+    
