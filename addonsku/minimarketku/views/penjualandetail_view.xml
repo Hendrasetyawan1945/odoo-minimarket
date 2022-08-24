@@ -28,7 +28,7 @@
                         <field name="nama_barangpenjualan"/>
                         <field name="harga_jual"/>
                         <field name="jumlah"/>
-                         <field name="subtotal"/>
+                        <field name="subtotal"/>
                     </group>
                 </sheet>
             </form>
@@ -43,8 +43,8 @@
 
     <!-- This Menu Item Must have a parent -->
     <menuitem id="penjualandetail_categ"
-              name="Penjualan Detail"
-              parent="penjualan_root"
-              action="penjualandetail_action"
-              sequence="20"/>
+            name="Penjualan Detail"
+            parent="penjualan_root"
+            action="penjualandetail_action"
+            sequence="20"/>
 </odoo>

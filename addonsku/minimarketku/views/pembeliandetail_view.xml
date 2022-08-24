@@ -28,7 +28,7 @@
                         <field name="nama_barangpembelian"/>
                         <field name="harga_beli"/>
                         <field name="jumlah"/>
-                        <field name="subtotal"/>
+                        <field name="subtotal" sum="Total"/>
                     </group>
                 </sheet>
             </form>
@@ -43,8 +43,8 @@
     </record>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pembeliandetail_categ"
-              name="pembelian detail"
-              parent="pembelian_root"
-              action="pembeliandetail_action"
-              sequence="20"/>
+            name="pembelian detail"
+            parent="pembelian_root"
+            action="pembeliandetail_action"
+            sequence="20"/>
 </odoo>

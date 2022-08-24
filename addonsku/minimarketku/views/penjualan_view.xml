@@ -29,6 +29,8 @@
                             <field name="no_notaids">
                                 <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
                                     <field name="nota_id"/>
+                                    <field name="nama_barangpenjualan"/>
+                                    <field name="harga_jual"/>
                                 </tree>
                             </field>
                         </page>

@@ -4,7 +4,8 @@ from odoo import fields, models, api
 class pembelian_detail(models.Model):
     _name = 'minimarket.pembeliandetail'
     _description = 'Description'
-    _rec_name = 'no_pembelian'
+    #_rec_name = 'no_pembelian'
+    #_rec_name = 'no_masuk_ids'
 
     no_masuk = fields.Char(
         string='No_masuk',
@@ -30,9 +31,10 @@ class pembelian_detail(models.Model):
         string='Jumlah',
         required=False)
     subtotal = fields.Integer(
+        compute="_compute_subtotal",
         string='Subtotal',
         required=False)
-
+        
 
     @api.depends('harga_beli')
     def _compute_hargabeli(self):
@@ -43,5 +45,22 @@ class pembelian_detail(models.Model):
     def _compute_namabarang(self):
         for a in self:
             a.nama_barangpembelian = a.kode_barang_ids.nama_barang
+    
+    @api.depends('subtotal')
+    def _compute_subtotal(self):
+        for record in self:
+            record.subtotal = record.jumlah * record.harga_beli
+    
+    total = fields.Integer(compute='_compute_total', string='Total')
+    
+    @api.depends('total')
+    def _compute_total(self):
+            for record in self:
+                a = sum(self.env['minimarket.pembeliandetail'].search([('no_masuk', '=', record.id)]).mapped('harga_beli'))
+                record.total = a
+    
+    
+    
+    
 
 

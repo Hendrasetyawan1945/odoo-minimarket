@@ -4,13 +4,15 @@ from odoo import fields, models, api
 class pembelian(models.Model):
     _name = 'minimarket.pembelian'
     _description = 'Description'
-    _rec_name = 'kode_pemasok'
+    #_rec_name = 'no_masuk_ids'
+
 
     no_masuk_ids = fields.One2many(
         comodel_name='minimarket.pembeliandetail',
-        inverse_name='no_masuk',
+        inverse_name='no_pembelian',
         string='No Masuk Ids',
         required=False)
+
     tgl_masuk = fields.Datetime(
         string='Tanggal Masuk',
         required=False,
@@ -28,6 +30,3 @@ class pembelian(models.Model):
         string='User id',
         required=False)
 
-
-    
-    

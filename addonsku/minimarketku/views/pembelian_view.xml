@@ -30,8 +30,10 @@
                     <notebook colspan='8'>
                         <page name="name" string="No Masuk">
                             <field name="no_masuk_ids">
-                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
-                                    <field name="no_masuk"/>
+                                <tree string="rup" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="no_pembelian"/>
+                                    <field name="nama_barangpembelian"/>
+                                    <field name="harga_beli"/>
                                 </tree>
                             </field>
                         </page>
@@ -49,8 +51,8 @@
     </record>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pembelian_categ"
-              name="pembelian"
-              parent="pembelian_root"
-              action="pembelian_action"
-              sequence="10"/>
+            name="pembelian"
+            parent="pembelian_root"
+            action="pembelian_action"
+            sequence="10"/>
 </odoo>
