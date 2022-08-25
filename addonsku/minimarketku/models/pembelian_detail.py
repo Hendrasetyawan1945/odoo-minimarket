@@ -51,13 +51,6 @@ class pembelian_detail(models.Model):
         for record in self:
             record.subtotal = record.jumlah * record.harga_beli
     
-    total = fields.Integer(compute='_compute_total', string='Total')
-    
-    @api.depends('total')
-    def _compute_total(self):
-            for record in self:
-                a = sum(self.env['minimarket.pembeliandetail'].search([('no_masuk', '=', record.id)]).mapped('harga_beli'))
-                record.total = a
     
     
     

@@ -22,6 +22,7 @@ class pembelian(models.Model):
         string='Kode_pemasok',
         required=False)
     total = fields.Integer(
+        compute='_compute_total',
         string='Total',
         required=False)
         
@@ -29,6 +30,13 @@ class pembelian(models.Model):
         comodel_name='minimarket.pengguna',
         string='User id',
         required=False)
+
+    @api.depends('total')
+    def _compute_total(self):
+        for record in self:
+            a = sum(self.env['minimarket.pembeliandetail'].search(
+                [('no_pembelian', '=', record.id)]).mapped('subtotal'))
+            record.total = a
 
 
     

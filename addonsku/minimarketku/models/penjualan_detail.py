@@ -35,6 +35,17 @@ class penjualandetail(models.Model):
         string='Subtotal',
         compute="_compute_subtotal",
         required=False)
+    # total = fields.Integer(
+    #     string='Total',
+    #     compute="_compute_total"
+    # )
+
+    # @api.depends('total')
+    # def _compute_total(self):
+    #     for record in self:
+    #         a = sum(self.env['minimarket.penjualandetail'].search(
+    #             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
+    #     record.total = a
 
     @api.depends('harga_jual')
     def _compute_hargajual(self):
@@ -52,13 +63,11 @@ class penjualandetail(models.Model):
             a.nama_barangpenjualan = a.kode_barang_ids.nama_barang
 
 
-total = fields.Integer(compute='_compute_total', string='Total',store=True)
+# total = fields.Integer(compute='_compute_total', string='Total',store=True)
 
-@api.depends('total')
-def _compute_total(self):
-    for record in self:
-        a = sum(self.env['minimarket.penjualandetail'].search(
-            [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
-        record.total = a
-
-
+# @api.depends('total')
+# def _compute_total(self):
+#     for record in self:
+#         a = sum(self.env['minimarket.penjualandetail'].search(
+#             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
+#         record.total = a

@@ -18,9 +18,18 @@ class penjualan(models.Model):
         required=False,
         default=fields.Datetime.now())
     total_bayar = fields.Integer(
+        compute="_compute_totalbayar",
         string='Total_bayar',
         required=False)
+
     kode_pelanggan = fields.Many2one(
         comodel_name='minimarket.pelanggan',
         string='Kode Pelanggan',
         required=False)
+
+    @api.depends('total_bayar')
+    def _compute_totalbayar(self):
+        for record in self:
+            a = sum(self.env['minimarket.penjualandetail'].search(
+                [('no_penjualan', '=', record.id)]).mapped('subtotal'))
+            record.total_bayar = a
