@@ -8,7 +8,7 @@ class penjualandetail(models.Model):
     #_rec_name = 'no_nota_id'
 
     nota_id = fields.Char(
-        comodel_name='minimarket.penjualan',
+        # comodel_name='minimarket.penjualan',
         string='Nota_id',
         required=False)
     no_penjualan = fields.Many2one(
@@ -43,8 +43,8 @@ class penjualandetail(models.Model):
 
     @api.depends('subtotal')
     def _compute_subtotal(self):
-        for a in self:
-            a.subtotal = a.jumlah
+        for record in self:
+            record.subtotal = record.jumlah * record.harga_jual
 
     @api.depends('nama_barangpenjualan')
     def _compute_namabarang(self):
