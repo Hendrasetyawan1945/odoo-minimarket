@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="pembeliandetail_view_tree" model="ir.ui.view">
         <field name="name">pembeliandetail_view_tree</field>
@@ -41,10 +41,9 @@
         <field name="res_model">minimarket.pembeliandetail</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pembeliandetail_categ"
             name="pembelian detail"
             parent="pembelian_root"
             action="pembeliandetail_action"
             sequence="20"/>
-</odoo>
+</odoo> -->

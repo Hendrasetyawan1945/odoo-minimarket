@@ -5,14 +5,15 @@ class penjualandetail(models.Model):
     _name = 'minimarket.penjualandetail'
     _description = 'Description penjualan detail'
     _rec_name = 'kode_barang_ids'
-    _rec_name = 'no_nota_id'
+    #_rec_name = 'no_nota_id'
 
     nota_id = fields.Char(
+        # comodel_name='minimarket.penjualan',
         string='Nota_id',
         required=False)
-    no_nota_id = fields.Many2one(
+    no_penjualan = fields.Many2one(
         comodel_name='minimarket.penjualan',
-        string='Kode Pelanggan',
+        string='Kode penjualan',
         required=False)
     kode_barang_ids = fields.Many2one(
         comodel_name='minimarket.barang',
@@ -34,6 +35,17 @@ class penjualandetail(models.Model):
         string='Subtotal',
         compute="_compute_subtotal",
         required=False)
+    # total = fields.Integer(
+    #     string='Total',
+    #     compute="_compute_total"
+    # )
+
+    # @api.depends('total')
+    # def _compute_total(self):
+    #     for record in self:
+    #         a = sum(self.env['minimarket.penjualandetail'].search(
+    #             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
+    #     record.total = a
 
     @api.depends('harga_jual')
     def _compute_hargajual(self):
@@ -42,8 +54,8 @@ class penjualandetail(models.Model):
 
     @api.depends('subtotal')
     def _compute_subtotal(self):
-        for a in self:
-            a.subtotal = a.jumlah
+        for record in self:
+            record.subtotal = record.jumlah * record.harga_jual
 
     @api.depends('nama_barangpenjualan')
     def _compute_namabarang(self):
@@ -51,5 +63,11 @@ class penjualandetail(models.Model):
             a.nama_barangpenjualan = a.kode_barang_ids.nama_barang
 
 
+# total = fields.Integer(compute='_compute_total', string='Total',store=True)
 
-
+# @api.depends('total')
+# def _compute_total(self):
+#     for record in self:
+#         a = sum(self.env['minimarket.penjualandetail'].search(
+#             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
+#         record.total = a

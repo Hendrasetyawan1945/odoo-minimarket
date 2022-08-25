@@ -32,13 +32,13 @@
         'views/pengguna_view.xml',
         'views/pelanggan_view.xml',
         'views/penjualan_view.xml',
-        'views/penjualandetail_view.xml',
+        #'views/penjualandetail_view.xml',
         'views/barang_view.xml',
         'views/produk_view.xml',
         'views/grup_view.xml',
         'views/pemasok_view.xml',
         'views/pembelian_view.xml',
-        'views/pembeliandetail_view.xml',
+        #'views/pembeliandetail_view.xml',
 
     ],
     # only loaded in demonstration mode

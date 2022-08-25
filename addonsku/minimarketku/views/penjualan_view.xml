@@ -25,14 +25,16 @@
                         <field name="total_bayar"/>
                     </group>
                     <notebook colspan='8'>
-                        <page name="name" string="No Nota Pembayaran">
+                        <page name="name" string="No Nota Pembayaran || Daftar Beli">
                             <field name="no_notaids">
-                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
-                                    <field name="nota_id"/>
-                                    <field name="nama_barangpenjualan"/>
-                                    <field name="harga_jual"/>
-                                </tree>
-                            </field>
+                            <tree editable='bottom'>
+                                <field name="kode_barang_ids"/>  
+                                <field name="nama_barangpenjualan"/> 
+                                <field name="harga_jual"/> 
+                                <field name="jumlah" />   
+                                <field name="subtotal" sum ="Total"/>                                     
+                            </tree>
+                            </field>                                                
                         </page>
                     </notebook>
                 </sheet>
@@ -48,8 +50,8 @@
 
     <!-- This Menu Item Must have a parent -->
     <menuitem id="penjualan_categ"
-              name="Penjualan"
-              parent="penjualan_root"
-              action="penjualan_action"
-              sequence="10"/>
+            name="Penjualan"
+            parent="minimarket_root"
+            action="penjualan_action"
+            sequence="20"/>
 </odoo>

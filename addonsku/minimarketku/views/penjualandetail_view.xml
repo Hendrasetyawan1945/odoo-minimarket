@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="penjualandetail_view_tree" model="ir.ui.view">
         <field name="name">penjualan_view_tree</field>
@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <tree string="penjualan_tree">
                 <field name="nota_id"/>
-                <field name="no_nota_id"/>
+                <field name="no_penjualan"/>
                 <field name="kode_barang_ids"/>
                 <field name="nama_barangpenjualan"/>
                 <field name="harga_jual"/>
@@ -23,7 +23,7 @@
                 <sheet>
                     <group>
                         <field name="nota_id"/>
-                        <field name="no_nota_id"/>
+                        <field name="no_penjualan"/>
                         <field name="kode_barang_ids"/>
                         <field name="nama_barangpenjualan"/>
                         <field name="harga_jual"/>
@@ -41,10 +41,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- This Menu Item Must have a parent -->
+    
     <menuitem id="penjualandetail_categ"
             name="Penjualan Detail"
             parent="penjualan_root"
             action="penjualandetail_action"
             sequence="20"/>
-</odoo>
+</odoo> -->
