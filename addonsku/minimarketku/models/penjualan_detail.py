@@ -52,5 +52,14 @@ class penjualandetail(models.Model):
             a.nama_barangpenjualan = a.kode_barang_ids.nama_barang
 
 
+total = fields.Integer(compute='_compute_total', string='Total')
+
+
+@api.depends('total')
+def _compute_total(self):
+    for record in self:
+        a = sum(self.env['minimarket.penjualandetail'].search(
+            [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
+        record.total = a
 
 

@@ -2,7 +2,7 @@
 <odoo>
     <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
     <menuitem id="minimarket_root"
-              name="MINIMARKETKU."
+              name="Selamat Datang di minimarket"
               sequence="10"/>
     <!-- This Menu Item Must have a parent -->
     <menuitem id="pelanggan_root"
