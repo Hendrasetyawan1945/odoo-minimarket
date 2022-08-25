@@ -52,8 +52,7 @@ class penjualandetail(models.Model):
             a.nama_barangpenjualan = a.kode_barang_ids.nama_barang
 
 
-total = fields.Integer(compute='_compute_total', string='Total')
-
+total = fields.Integer(compute='_compute_total', string='Total',store=True)
 
 @api.depends('total')
 def _compute_total(self):

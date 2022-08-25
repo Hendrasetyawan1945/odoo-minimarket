@@ -34,8 +34,8 @@
                                 <field name="kode_barang_ids"/>  
                                 <field name="nama_barangpembelian"/> 
                                 <field name="harga_beli"/> 
-                                <field name="jumlah" />   
-                                <field name="subtotal" sum="Total"/>                                     
+                                <field name="jumlah" sum="Jumlah" />   
+                                <field name="subtotal" sum="Totalsemua"/>                                     
                             </tree>
                             </field>                                                
                         </page>
