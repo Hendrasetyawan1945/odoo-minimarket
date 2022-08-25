@@ -50,8 +50,8 @@
 
     <!-- This Menu Item Must have a parent -->
     <menuitem id="penjualan_categ"
-              name="Penjualan"
-              parent="penjualan_root"
-              action="penjualan_action"
-              sequence="10"/>
+            name="Penjualan"
+            parent="penjualan_root"
+            action="penjualan_action"
+            sequence="10"/>
 </odoo>

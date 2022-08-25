@@ -28,14 +28,16 @@
                         <field name="user_id"/>
                     </group>
                     <notebook colspan='8'>
-                        <page name="name" string="No Masuk">
+                        <page name="name" string="No Nota Pembelian || Daftar Beli">
                             <field name="no_masuk_ids">
-                                <tree string="rup" create="true" delete="true" edit="true" editable="bottom">
-                                    <field name="no_pembelian"/>
-                                    <field name="nama_barangpembelian"/>
-                                    <field name="harga_beli"/>
-                                </tree>
-                            </field>
+                            <tree editable='bottom'>
+                                <field name="kode_barang_ids"/>  
+                                <field name="nama_barangpembelian"/> 
+                                <field name="harga_beli"/> 
+                                <field name="jumlah" />   
+                                <field name="subtotal"/>                                     
+                            </tree>
+                            </field>                                                
                         </page>
                     </notebook>
                 </sheet>
