@@ -34,7 +34,14 @@ class pembelian_detail(models.Model):
         compute="_compute_subtotal",
         string='Subtotal',
         required=False)
-        
+
+    @api.model
+    def create(self, vals):
+        record = super(pembelian_detail, self).create(vals)
+        if record.jumlah:
+            self.env['minimarket.barang'].search([('id', '=', record.kode_barang_ids.id)]).write({
+                'stok': record.kode_barang_ids.stok+record.jumlah})
+            return record
 
     @api.depends('harga_beli')
     def _compute_hargabeli(self):
@@ -45,15 +52,10 @@ class pembelian_detail(models.Model):
     def _compute_namabarang(self):
         for a in self:
             a.nama_barangpembelian = a.kode_barang_ids.nama_barang
-    
+
     @api.depends('subtotal')
     def _compute_subtotal(self):
         for record in self:
             record.subtotal = record.jumlah * record.harga_beli
-    
-    
-    
-    
-    
 
 

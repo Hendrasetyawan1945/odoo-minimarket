@@ -17,6 +17,7 @@ class pembelian(models.Model):
         string='Tanggal Masuk',
         required=False,
         default=fields.Datetime.now())
+        
     kode_pemasok = fields.Many2one(
         comodel_name='minimarket.pemasok',
         string='Kode_pemasok',
@@ -37,7 +38,7 @@ class pembelian(models.Model):
             a = sum(self.env['minimarket.pembeliandetail'].search(
                 [('no_pembelian', '=', record.id)]).mapped('subtotal'))
             record.total = a
-
+    
 
     
     
