@@ -5,7 +5,7 @@ class penjualan(models.Model):
     _name = 'minimarket.penjualan'
     _description = 'Description'
     _rec_name = 'kode_pelanggan'
-   #_rec_name = 'no_notaids'
+    #_rec_name = 'no_notaids'
 
     no_notaids = fields.One2many(
         comodel_name='minimarket.penjualandetail',

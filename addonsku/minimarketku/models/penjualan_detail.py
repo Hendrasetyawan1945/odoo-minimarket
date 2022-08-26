@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-
+from odoo.exceptions import ValidationError
 
 class penjualandetail(models.Model):
     _name = 'minimarket.penjualandetail'
@@ -35,17 +35,14 @@ class penjualandetail(models.Model):
         string='Subtotal',
         compute="_compute_subtotal",
         required=False)
-    # total = fields.Integer(
-    #     string='Total',
-    #     compute="_compute_total"
-    # )
 
-    # @api.depends('total')
-    # def _compute_total(self):
-    #     for record in self:
-    #         a = sum(self.env['minimarket.penjualandetail'].search(
-    #             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
-    #     record.total = a
+    @api.model
+    def create(self, vals):
+        record = super(penjualandetail, self).create(vals)
+        if record.jumlah:
+            self.env['minimarket.barang'].search([('id','=',record.kode_barang_ids.id)]).write({
+                'stok':record.kode_barang_ids.stok-record.jumlah})
+            return record
 
     @api.depends('harga_jual')
     def _compute_hargajual(self):
