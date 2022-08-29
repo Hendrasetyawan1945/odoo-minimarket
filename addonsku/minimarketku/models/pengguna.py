@@ -1,16 +1,11 @@
 from odoo import fields, models, api
 
 
-class ModelName(models.Model):
+class pengguna(models.Model):
     _name = 'minimarket.pengguna'
     _description = 'Description'
 
-    userid_ids = fields.One2many(
-        comodel_name='minimarket.pembelian',
-        inverse_name='user_id',
-        string='User Ids',
-        required=False)
-    id = fields.Char(
+    name = fields.Char(
         string='Id', 
         required=False)
     passid = fields.Integer(
@@ -19,6 +14,13 @@ class ModelName(models.Model):
     nama = fields.Char(
         string='Nama',
         required=False)
-    level = fields.Integer(
+    jk = fields.Selection(string='Jenis Kelamin', 
+    selection=[('laki-laki', 'Laki-laki'), 
+    ('perempuan', 'Perempuan')])
+    level = fields.Selection(
         string='Level',
-        required=False)
+        selection=[('gold', 'Gold'),
+                ('silver', 'Silver'),
+                ('bronze', 'Bronze'),],
+        required=False, )
+
