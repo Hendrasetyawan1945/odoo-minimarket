@@ -36,6 +36,7 @@ class penjualandetail(models.Model):
         compute="_compute_subtotal",
         required=False)
 
+
     @api.model
     def create(self, vals):
         record = super(penjualandetail, self).create(vals)

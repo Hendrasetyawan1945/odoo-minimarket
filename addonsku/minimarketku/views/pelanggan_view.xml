@@ -38,16 +38,16 @@
         </field>
     </record>
 
-   <record id="pelanggan_action" model="ir.actions.act_window">
-       <field name="name">Pelanggan</field>
-       <field name="type">ir.actions.act_window</field>
-       <field name="res_model">minimarket.pelanggan</field>
-       <field name="view_mode">tree,form</field>
-   </record>
+    <record id="pelanggan_action" model="ir.actions.act_window">
+        <field name="name">Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.pelanggan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <!-- This Menu Item Must have a parent -->
     <menuitem id="pelangganmenu_categ"
-              name="Pelanggan"
-              parent="minimarket_root"
-              action="pelanggan_action"
-              sequence="10"/>
+            name="Pelanggan"
+            parent="minimarket_root"
+            action="pelanggan_action"
+            sequence="10"/>
 </odoo>

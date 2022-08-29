@@ -40,6 +40,9 @@
         'views/pembelian_view.xml',
         #'views/pembeliandetail_view.xml',
 
+        #'views/dagangan_view.xml',
+
+
     ],
     # only loaded in demonstration mode
     'demo': [
