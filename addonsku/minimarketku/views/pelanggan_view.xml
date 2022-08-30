@@ -7,6 +7,7 @@
             <tree string="pelanggan_tree">
                 <field name="kode_pelanggan"/>
                 <field name="nama_pelanggan"/>
+                <field name="jk"/>
                 <field name="alamat"/>
                 <field name="no_tlpn"/>
             </tree>
@@ -21,6 +22,7 @@
                     <group>
                         <field name="kode_pelanggan"/>
                         <field name="nama_pelanggan"/>
+                        <field name="jk"/>
                         <field name="alamat"/>
                         <field name="no_tlpn"/>
                     </group>

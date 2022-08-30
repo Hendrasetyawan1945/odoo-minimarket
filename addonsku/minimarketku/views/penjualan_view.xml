@@ -8,7 +8,7 @@
 <!--                <field name="no_notaids"/>-->
                 <field name="membership"/>
                 <field name="nama_member" attrs="{'invisible' : [('membership', '=' ,True)]}"/>
-                <field name="pengguna" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
                 <field name="jk"/>
                 <field name="kode_pelanggan"/>
                 <field name="tgl_nota"/>
@@ -26,7 +26,7 @@
 <!--                        <field name="no_notaids"/>-->
                         <field name="membership"/>
                         <field name="nama_member" attrs="{'invisible' : [('membership', '=' ,True)]}"/>
-                        <field name="pengguna" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                        <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
                         <field name="jk"/>
                         <field name="kode_pelanggan"/>
                         <field name="tgl_nota"/>
