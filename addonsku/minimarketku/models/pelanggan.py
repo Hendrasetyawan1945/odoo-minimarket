@@ -19,9 +19,9 @@ class pelanggan(models.Model):
         string='Nama Membership',
         required=False)
     jk = fields.Selection(string='Jenis Kelamin',
-                          selection=[('laki-laki', 'Laki-laki'),
-                                     ('perempuan', 'Perempuan')],
-                          required=True)
+                        selection=[('laki-laki', 'Laki-laki'),
+                                    ('perempuan', 'Perempuan')],
+                        required=True)
     alamat = fields.Char(
         string='Alamat',
         required=False)

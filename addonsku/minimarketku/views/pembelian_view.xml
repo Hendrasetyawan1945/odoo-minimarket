@@ -8,6 +8,9 @@
                 <!-- <field name="no_masuk_ids"/> -->
                 <field name="kode_pemasok"/>
                 <field name="tgl_masuk"/>
+                <field name="kode_spec"/>
+                <field name="kode_provinsi"/>
+                <field name="kode_keteranganasal"/>
                 <field name="total"/>
                 <field name="user_id"/>
             </tree>
@@ -24,6 +27,9 @@
                         <!-- <field name="no_masuk_ids"/> -->
                         <field name="kode_pemasok"/>
                         <field name="tgl_masuk"/>
+                        <field name="kode_spec"/>
+                        <field name="kode_provinsi"/>
+                        <field name="kode_keteranganasal"/>
                         <field name="total"/>
                         <field name="user_id"/>
                     </group>

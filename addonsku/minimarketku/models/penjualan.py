@@ -43,13 +43,13 @@ class penjualan(models.Model):
         string='Pengguna id',
         required=False)
     id_member = fields.Char(
-        string='Id_member',
-        required=False)
+        compute="_compute_is_member",
+        string='Id_member')
 
     @api.depends('pengguna_id')
     def _compute_is_member(self):
         for i in self:
-            i.id_member = i.pengguna_id.pelanggan_ids
+            i.id_member = i.pengguna_id.kode_pelanggan
 
     @api.onchange('pengguna_id')
     def _onchange_pengguna(self):

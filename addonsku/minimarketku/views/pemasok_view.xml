@@ -10,6 +10,7 @@
                 <field name="nama_pemasok"/>
                 <field name="alamat"/>
                 <field name="kota"/>
+                <field name="kode_provinsi"/>
                 <field name="provinsi"/>
                 <field name="no_tlpn"/>
                 <field name="no_fak"/>
@@ -24,18 +25,23 @@
         <field name="arch" type="xml">
             <form string="_form">
                 <sheet>
-                    <group>
+                    <group string="Kode pemasok">
                         <field name="kode_pemasok"/>
                         <field name="nama_pemasok"/>
                         <field name="kontak_kp"/>
                     </group>
-                    <group>
+                    <group string="alamat Pemasok dan Tlpn">
                         <field name="alamat"/>
                         <field name="kota"/>
+                        <field name="kode_provinsi"/>
                         <field name="provinsi"/>
                         <field name="no_tlpn"/>
                         <field name="no_fak"/>
                     </group>
+                    <group name="name" string="Daftar Barang">                      
+                        <field name="barang_ids"/>
+                    </group>
+                    
                     <notebook colspan='8'>
                         <page name="name" string="Pembelian">
                             <field name="kode_pembelian_ids">

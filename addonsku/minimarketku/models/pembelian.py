@@ -22,6 +22,11 @@ class pembelian(models.Model):
         comodel_name='minimarket.pemasok',
         string='Kode_pemasok',
         required=False)
+    kode_spec = fields.Char(string=' Kode Spec')
+    kode_provinsi = fields.Char(string='Kode Provinsi',
+                                compute="_compute_kp")
+    kode_keteranganasal = fields.Char(string='Kode asal',
+                                omchange='_onchange_asal')
     total = fields.Integer(
         compute='_compute_total',
         string='Total',
@@ -31,7 +36,20 @@ class pembelian(models.Model):
         comodel_name='minimarket.pengguna',
         string='User id',
         required=False)
+    
+    @api.depends('kode_provinsi')
+    def _compute_kp(self):
+        for record in self:
+            record.kode_provinsi = record.kode_pemasok.kode_provinsi
+    
+    @api.onchange('kode_pemasok', 'kode_spec')
+    def _onchange_asal(self):
+        if (self.kode_pemasok.kode_pemasok):
+            self.kode_keteranganasal = str(self.kode_pemasok.kode_pemasok) + str(self.kode_spec)
+        else :
+            self.kode_keteranganasal = ""
 
+        
     @api.depends('total')
     def _compute_total(self):
         for record in self:
