@@ -38,7 +38,11 @@
         'views/grup_view.xml',
         'views/pemasok_view.xml',
         'views/pembelian_view.xml',
+
+
+        'views/manusia_view.xml',
         'views/kasir_view.xml',
+        'views/komisaris_view.xml',
 
         #'views/pembeliandetail_view.xml',
         #'views/dagangan_view.xml',

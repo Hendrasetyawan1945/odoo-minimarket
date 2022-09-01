@@ -13,7 +13,7 @@
         </field>
     </record>
 
-    <record id="manusisa_view_form" model="ir.ui.view">
+    <record id="manusia_view_form" model="ir.ui.view">
         <field name="name">manusia.view.form</field>
         <field name="model">minimarket.manusia</field>
         <field name="arch" type="xml">
@@ -28,5 +28,18 @@
             </form>
         </field>
     </record>
+
+    <record id="manusia_action" model="ir.actions.act_window">
+        <field name="name">manusia_action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">minimarket.manusia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- <menuitem
+        id="manusia_menu"
+        name="manusia"
+        action="manusia_action"
+        parent="karyawan_root"
+        sequence="10" /> -->
 
 </odoo>

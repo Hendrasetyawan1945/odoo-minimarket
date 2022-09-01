@@ -1,4 +1,3 @@
-from crypt import methods
 from odoo import http, models, fields
 from odoo.http import request
 import json
@@ -22,16 +21,16 @@ class Minimarketku(http.Controller):
     @http.route('/minimarketku/get_pemasok', auth='public', method=['GET'])
     def getbarang(self, **kw):
         pemasok= request.env['minimarket.pemasok'].search([])
-        isi = []
+        i = []
         for a in pemasok:
-            isi.append({
+            i.append({
                 'kode_pemasok': a.kode_pemasok,
                 'nama_pemasok': a.nama_pemasok,
                 'alamat': a.alamat,
                 # 'kode_provinsi': a.kode_provinsi,
                 # 'provinsi': a.provinsi
             })
-        return json.dumps(isi)
+        return json.dumps(i)
 
     @http.route('/minimarketku/get_pengguna', auth='public', method=['GET'])
     def getbarang(self, **kw):

@@ -1,53 +1,41 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>    
-    <!-- primary|extension Inherited .:Tree:. view for "model" -->
-    <record id="minimarket_kasir_tree_inherited" model="ir.ui.view">
-        <field name="name">minimarket_kasir_tree_inherited</field>
+
+    <record id="minimarket_kasir_tree_inherit" model="ir.ui.view">
+        <field name="name">minimarket_kasir_tree_inherit</field>
         <field name="model">minimarket.kasir</field>
-        <field name="inherit_id" ref="minimarket_manusia_view_tree" />
-        <!-- <field name="mode">primary</field> -->
+        <field name="inherit_id" ref="minimarketku.manusia_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='alamat']" position="after">
                 <field name="id_pegawai"/>
                 <field name="status_pegawai"/>
             </xpath>
+            <!-- <xpath expr="//field[@name='name']" position="attributes">
+                <attributes name="string">Nama Kasir</attributes>
+            </xpath> -->
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="string">Nama Kasir yak</attribute>
+            </xpath>
         </field>
     </record>
     
-    <record id="minimarket_kasir_form_inherited" model="ir.ui.view">
-        <field name="name">minimarket_kasir_form_inherited</field>
+    <record id="minimarket_kasir_form_inherit" model="ir.ui.view">
+        <field name="name">minimarket_kasir_form_inherit</field>
         <field name="model">minimarket.kasir</field>
-        <field name="inherit_id" ref="minimarket_manusia_view_form" />
-        <!-- <field name="mode">primary</field> -->
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="minimarketku.manusia_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="after">
+            <xpath expr="//field[@name='alamat']" position="after">
                 <field name="id_pegawai"/>
                 <field name="status_pegawai"/>
             </xpath>
-        </field>
-    </record>
-    
-    <!-- primary|extension Inherited .:Search:. view for "model" -->
-    <record id="view_model_search_inherited" model="ir.ui.view">
-        <field name="name">view.model.search inherited</field>
-        <field name="model">model</field>
-        <!-- Please veryfiy, that the following inherited view really sticks to the naming convention. -->
-        <field name="inherit_id" ref="module_name.view_model_search" />
-        <field name="type">search</field>
-        <field name="mode">primary|extension</field>
-        <field name="priority" eval="16" />
-        <field name="active" eval="True" />
-        <field name="arch" type="xml">
-            <!-- 
-            <xpath expr="//field[@name='name']" position="after">
-                
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="string">Nama Kasir</attribute>
             </xpath>
-            -->
         </field>
     </record>
     
-
-
     <record id="kasir_action" model="ir.actions.act_window">
         <field name="name">Kasir</field>
         <field name="res_model">minimarket.kasir</field>
@@ -59,5 +47,5 @@
         name="Kasir"
         action="kasir_action"
         parent="karyawan_root"
-        sequence="10" />
+        sequence="20" />
 </odoo>
