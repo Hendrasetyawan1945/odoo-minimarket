@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="minimarket_komisaris_tree_inherit" model="ir.ui.view">
+        <field name="name">minimarket_komisaris_tree_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='email']" position="after">
+            <field name="jabatan"/>
+        </xpath>
+        </field>
+    </record>
+    
+    <record id="minimarket_komisaris_form_inherit" model="ir.ui.view">
+        <field name="name">minimarket_komisaris_form_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='email']" position="after">
+            <field name="jabatan"/>
+        </xpath>
+        </field>
+    </record> 
+
+    <record id="komisaris_action" model="ir.actions.act_window">
+        <field name="name">Komisaris</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="komisaris_menu"
+        name="Komisaris"
+        action="komisaris_action"
+        parent="karyawan_root"
+        sequence="30" />
+</odoo>
