@@ -14,3 +14,5 @@ from . import pembelian
 from . import pemasok
 
 #from . import dagangan
+from . import manusia
+from . import kasir

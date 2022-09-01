@@ -5,7 +5,7 @@ class produk(models.Model):
     _name = 'minimarket.produk'
     _description = 'Description produk'
     _rec_name = 'grup_id'
-
+    
 
     barang_ids = fields.One2many(
         comodel_name='minimarket.barang',

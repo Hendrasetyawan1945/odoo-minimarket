@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="manusia_view_tree" model="ir.ui.view">
+        <field name="name">manusia.view.tree</field>
+        <field name="model">minimarket.manusia</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="alamat"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="manusisa_view_form" model="ir.ui.view">
+        <field name="name">manusia.view.form</field>
+        <field name="model">minimarket.manusia</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="gender"/>
+                        <field name="alamat"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -49,7 +49,7 @@
     <!-- This Menu Item Must have a parent -->
     <menuitem id="pelangganmenu_categ"
             name="Pelanggan"
-            parent="minimarket_root"
+            parent="pengguna_root"
             action="pelanggan_action"
             sequence="10"/>
 </odoo>

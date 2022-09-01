@@ -2,29 +2,31 @@
 <odoo>
     <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
     <menuitem id="minimarket_root"
-              name="Selamat Datang di minimarket"
-              sequence="10"/>
-    <!-- This Menu Item Must have a parent -->
-    <menuitem id="pelanggan_root"
-              name="Pelanggan"
-              parent="minimarket_root"
-              sequence="10"/>
-    <menuitem id="penjualan_root"
-              name="Penjualan"
-              parent="minimarket_root"
-              sequence="20"/>
-    <menuitem id="pembelian_root"
-              name="Pembelian"
-              parent="minimarket_root"
-              sequence="30"/>
-    <menuitem id="barang_root"
-              name="Barang"
-              parent="minimarket_root"
-              sequence="40"/>
+            name="Selamat Datang di minimarket"
+            sequence="10"/>
     <menuitem id="pengguna_root"
-              name="Pengguna"
-              parent="minimarket_root"
-              sequence="50"/>
+            name="Daftar Pengguna"
+            parent="minimarket_root"
+            sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="penjualan_root"
+            name="Penjualan"
+            parent="minimarket_root"
+            sequence="20"/>
+    <menuitem id="pembelian_root"
+            name="Pembelian"
+            parent="minimarket_root"
+            sequence="30"/>
+    <menuitem id="barang_root"
+            name="Barang"
+            parent="minimarket_root"
+            sequence="40"/>
+    <menuitem
+        id="karyawan_root"
+        name="Karyawan"
+        parent="minimarket_root"
+        sequence="50" />
+    
 
 
 </odoo>

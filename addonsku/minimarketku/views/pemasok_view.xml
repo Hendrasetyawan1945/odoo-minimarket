@@ -65,7 +65,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pemasok_categ"
               name="Pemasok"
-              parent="pembelian_root"
+              parent="pengguna_root"
               action="pemasok_action"
-              sequence="30"/>
+              sequence="20"/>
 </odoo>

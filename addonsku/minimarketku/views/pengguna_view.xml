@@ -43,8 +43,8 @@
     </record>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pengguna_categ"
-              name="Pengguana Minimarket"
-              parent="minimarket_root"
+              name="Pengguana Minimarket Lvl"
+              parent="pengguna_root"
               action="pengguna_action"
               sequence="50"/>
 </odoo>
