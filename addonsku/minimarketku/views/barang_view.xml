@@ -7,6 +7,8 @@
             <tree string="barang_tree">
                 <field name="kode_barang"/>
                 <field name="kode_produk"/>
+                <field name="kode_produkbarang"/>
+                <field name="kode_spec"/>
                 <field name="keterangan_produk"/>
                 <field name="nama_barang"/>
                 <field name="satuan"/>
@@ -23,9 +25,11 @@
         <field name="arch" type="xml">
             <form string="barang_form">
                 <sheet>
-                    <group>
+                    <group string="Barang">
                         <field name="kode_barang"/>
                         <field name="kode_produk"/>
+                        <field name="kode_produkbarang"/>
+                        <field name="kode_spec"/>
                         <field name="keterangan_produk"/>
                         <field name="nama_barang"/>
                         <field name="satuan"/>
@@ -33,6 +37,9 @@
                         <field name="harga_jual"/>
                         <field name="stok"/>
                         <field name="kadaluarsa"/>
+                    </group>
+                    <group string="Daftar Supplier">
+                        <field name="pemasok_ids"/>
                     </group>
                 </sheet>
             </form>

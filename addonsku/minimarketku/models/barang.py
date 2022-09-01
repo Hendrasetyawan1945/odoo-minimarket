@@ -1,3 +1,4 @@
+from xxlimited import Str
 from odoo import fields, models, api
 
 
@@ -23,6 +24,10 @@ class barang(models.Model):
     nama_barang = fields.Char(
         string='Nama_barang',
         required=False)
+    kode_spec = fields.Char(string='Kode Spec')
+    kode_produkbarang = fields.Char(
+        onchange='_onchange_kodeprodukbarang',
+        string='Kode produk barang')
     satuan = fields.Selection(
         string='Satuan',
         selection=[('unit', 'Unit'),
@@ -36,13 +41,18 @@ class barang(models.Model):
     harga_jual = fields.Integer(
         string='Harga_jual', 
         required=False)
-
     stok = fields.Integer(
         string='Stok',
         required=False)
     kadaluarsa = fields.Date(
         string='Kadaluarsa', 
         required=False)
+    
+    pemasok_ids = fields.Many2many(comodel_name='minimarket.pemasok', string='Pemasok Barang')
+    
+    @api.onchange('kode_produk','kode_spec')
+    def _onchange_kodeprodukbarang(self):
+        self.kode_produkbarang = str(self.kode_produk.nama_produk)+' '+str(self.kode_spec)
     
     @api.depends('kode_produk')
     def _compute_produk(self):

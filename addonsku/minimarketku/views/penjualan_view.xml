@@ -8,7 +8,8 @@
 <!--                <field name="no_notaids"/>-->
                 <field name="membership"/>
                 <field name="nama_member" attrs="{'invisible' : [('membership', '=' ,True)]}"/>
-                <field name="pengguna" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                <field name="id_member"/>
                 <field name="jk"/>
                 <field name="kode_pelanggan"/>
                 <field name="tgl_nota"/>
@@ -22,11 +23,12 @@
         <field name="arch" type="xml">
             <form string="_form">
                 <sheet>
-                    <group>
+                    <group string="Kategori pelanggan">
 <!--                        <field name="no_notaids"/>-->
                         <field name="membership"/>
                         <field name="nama_member" attrs="{'invisible' : [('membership', '=' ,True)]}"/>
-                        <field name="pengguna" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                        <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
+                        <!-- <field name="id_member" attrs="{'invissible' : [('memberhip', '=' ,False)]}"/> -->
                         <field name="jk"/>
                         <field name="kode_pelanggan"/>
                         <field name="tgl_nota"/>

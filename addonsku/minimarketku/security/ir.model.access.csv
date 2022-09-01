@@ -10,3 +10,6 @@ access_minimarket_produk,access.minimarket.produk,model_minimarket_produk,,1,1,1
 access_minimarket_pembelian,access.minimarket.pembelian,model_minimarket_pembelian,,1,1,1,1
 access_minimarket_pembeliandetail,access.minimarket.pembeliandetail,model_minimarket_pembeliandetail,,1,1,1,1
 access_minimarket_pemasok,access.minimarket.pemasok,model_minimarket_pemasok,,1,1,1,1
+
+access_minimarket_manusia,access.minimarket.manusia,model_minimarket_manusia,,1,1,1,1
+access_minimarket_kasir,access.minimarket.kasir,model_minimarket_kasir,,1,1,1,1

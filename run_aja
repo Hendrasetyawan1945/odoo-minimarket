@@ -1,0 +1,2 @@
+
+./odoo-bin --addons-path=/home/hendra/minimarket/addons,/home/hendra/minimarket/addonsku -d market --db_port 5432 --xmlrpc-port=8069  --limit-memory-hard 0 --limit-time-real=10000 -u minimarketku

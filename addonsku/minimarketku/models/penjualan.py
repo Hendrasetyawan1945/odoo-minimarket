@@ -36,17 +36,25 @@ class penjualan(models.Model):
 
     membership = fields.Boolean(string='Membership')
     nama_member = fields.Char(
-        string='Nama_member',
+        string='Nama ',
         required=False)
-    pengguna = fields.Many2one(
-        comodel_name='minimarket.pengguna',
+    pengguna_id = fields.Many2one(
+        comodel_name='minimarket.pelanggan',
         string='Pengguna id',
         required=False)
+    id_member = fields.Char(
+        compute="_compute_is_member",
+        string='Id_member')
 
-    @api.onchange('pengguna')
+    @api.depends('pengguna_id')
+    def _compute_is_member(self):
+        for i in self:
+            i.id_member = i.pengguna_id.kode_pelanggan
+
+    @api.onchange('pengguna_id')
     def _onchange_pengguna(self):
-        if self.pengguna.jk:
-            self.jk = self.pengguna.jk
+        if self.pengguna_id.jk:
+            self.jk = self.pengguna_id.jk
         else:
             self.jk = ""
 
