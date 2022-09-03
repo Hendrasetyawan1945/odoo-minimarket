@@ -43,6 +43,8 @@
         'views/manusia_view.xml',
         'views/kasir_view.xml',
         'views/komisaris_view.xml',
+        'views/status_view.xml',
+
 
         #'views/pembeliandetail_view.xml',
         #'views/dagangan_view.xml',
