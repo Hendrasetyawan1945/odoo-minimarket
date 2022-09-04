@@ -31,6 +31,8 @@ class pembelian(models.Model):
         compute='_compute_total',
         string='Total',
         required=False)
+    status = fields.Selection(string='Status', 
+    selection=[('draf', 'Draf'), ('Complete', 'Complete')])
         
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',

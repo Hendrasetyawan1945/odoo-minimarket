@@ -13,6 +13,7 @@
                 <field name="kode_keteranganasal"/>
                 <field name="total"/>
                 <field name="user_id"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
@@ -32,6 +33,7 @@
                         <field name="kode_keteranganasal"/>
                         <field name="total"/>
                         <field name="user_id"/>
+                        <field name="status"/>
                     </group>
                     <notebook colspan='8'>
                         <page name="name" string="No Nota Pembelian || Daftar Beli">
