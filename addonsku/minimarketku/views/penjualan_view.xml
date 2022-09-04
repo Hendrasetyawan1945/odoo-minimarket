@@ -11,9 +11,10 @@
                 <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
                 <field name="id_member"/>
                 <field name="jk"/>
-                <field name="kode_pelanggan"/>
+                <!-- <field name="kode_pelanggan"/> -->
                 <field name="tgl_nota"/>
                 <field name="total_bayar"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
@@ -30,9 +31,10 @@
                         <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
                         <!-- <field name="id_member" attrs="{'invissible' : [('memberhip', '=' ,False)]}"/> -->
                         <field name="jk"/>
-                        <field name="kode_pelanggan"/>
+                        <!-- <field name="kode_pelanggan"/> -->
                         <field name="tgl_nota"/>
-                        <field name="total_bayar"/>                        
+                        <field name="total_bayar"/>   
+                        <field name="status"/>                     
                     </group>
                     <notebook colspan='8'>
                         <page name="name" string="No Nota Pembayaran || Daftar Beli">
