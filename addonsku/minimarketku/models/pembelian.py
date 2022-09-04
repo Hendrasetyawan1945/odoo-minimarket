@@ -1,4 +1,5 @@
 from odoo import fields, models, api
+from odoo.exceptions import ValidationError
 
 
 class pembelian(models.Model):
@@ -32,7 +33,7 @@ class pembelian(models.Model):
         string='Total',
         required=False)
     status = fields.Selection(string='Status', 
-    selection=[('draf', 'Draf'), ('Complete', 'Complete')])
+    selection=[('draf', 'Draf'), ('complete', 'Complete')])
         
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',
@@ -50,6 +51,13 @@ class pembelian(models.Model):
                 print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
                 i.kode_barang_ids.stok -= i.jumlah
         record = super(pembelian, self).unlink()
+
+    def unlink(self):
+        print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
+        if self.status == 'draf':
+            raise ValidationError("tidak dapat menghapus")
+        return super(pembelian, self).unlink()
+    
 
     @api.depends('kode_provinsi')
     def _compute_kp(self):
