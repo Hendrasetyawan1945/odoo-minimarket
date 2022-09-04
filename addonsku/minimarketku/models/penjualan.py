@@ -1,5 +1,6 @@
 from importlib.metadata import requires
 from odoo import fields, models, api
+from odoo.exceptions import ValidationError
 
 
 class penjualan(models.Model):
@@ -45,6 +46,27 @@ class penjualan(models.Model):
     id_member = fields.Char(
         compute="_compute_is_member",
         string='Id_member')
+    # status = fields.Selection(string='Status', 
+    # selection=[('draf', 'draf'), ('done', 'Done')])
+
+    # def unlink(self):
+    #     if self.no_notaids:
+    #         a = []
+    #         for x in self:
+    #             a = self.env['minimarket.penjualandetail'].search(
+    #                 [('no_penjualan', '=', x.id)])
+    #             print(a)
+    #         for i in a:
+    #             print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
+    #             i.kode_barang_ids.stok += i.jumlah
+    #     record = super(penjualan, self).unlink()
+
+    # def unlink(self):
+    #     print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
+    #     if self.status == 'done':
+    #         raise ValidationError(
+    #             "Tidak dapat menghapus karena status pembelian 'Done' !!!")
+    #     return super(penjualan, self).unlink()
 
     @api.depends('pengguna_id')
     def _compute_is_member(self):

@@ -33,7 +33,7 @@ class pembelian(models.Model):
         string='Total',
         required=False)
     status = fields.Selection(string='Status', 
-    selection=[('draf', 'Draf'), ('complete', 'Complete')])
+    selection=[('draf', 'Draf'), ('done', 'Done')])
         
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',
@@ -54,8 +54,8 @@ class pembelian(models.Model):
 
     def unlink(self):
         print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
-        if self.status == 'draf':
-            raise ValidationError("tidak dapat menghapus")
+        if self.status == 'done':
+            raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
         return super(pembelian, self).unlink()
     
 
