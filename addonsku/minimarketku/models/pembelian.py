@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-
+from odoo.exceptions import ValidationError
 
 class pembelian(models.Model):
     _name = 'minimarket.pembelian'
@@ -32,7 +32,7 @@ class pembelian(models.Model):
         string='Total',
         required=False)
     status = fields.Selection(string='Status', 
-    selection=[('draf', 'Draf'), ('Complete', 'Complete')])
+    selection=[('draf', 'Draf'), ('complete', 'Complete')])
         
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',
@@ -51,6 +51,12 @@ class pembelian(models.Model):
                 i.kode_barang_ids.stok -= i.jumlah
         record = super(pembelian, self).unlink()
 
+    
+    # def unlink(self):
+    #     if self.status == 'complete':
+    #         raise ValidationError("Tidak dapat menghapus pembelian karena status sudah complete")
+    #     res = super().unlink()
+        
     @api.depends('kode_provinsi')
     def _compute_kp(self):
         for record in self:
