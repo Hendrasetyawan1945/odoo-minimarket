@@ -37,6 +37,18 @@ class pembelian(models.Model):
         string='User id',
         required=False)
     
+    def unlink(self):
+        if self.no_masuk_ids:
+            a = []
+            for x in self:
+                a = self.env['minimarket.pembeliandetail'].search(
+                    [('no_pembelian', '=', x.id)])
+                print(a)
+            for i in a:
+                print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
+                i.kode_barang_ids.stok -= i.jumlah
+        record = super(pembelian, self).unlink()
+
     @api.depends('kode_provinsi')
     def _compute_kp(self):
         for record in self:
