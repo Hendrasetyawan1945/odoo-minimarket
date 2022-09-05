@@ -49,6 +49,8 @@ class penjualan(models.Model):
     status = fields.Selection(string='Status', 
     selection=[('draf', 'draf'), ('done', 'Done')])
 
+
+    #unlink digunakan untuk menghapus
     def unlink(self):
         if self.no_notaids:
             a = []
@@ -67,6 +69,31 @@ class penjualan(models.Model):
             raise ValidationError(
                 "Tidak dapat menghapus karena status pembelian 'Done' !!!")
         return super(penjualan, self).unlink()
+
+    #write untuk mengedit suatu record
+    def write(self, vals):
+        for rec in self:
+            a = self.env('minimarket.penjualandetail').search(
+                [('no_penjualan', '=',rec.id)])
+            print(a)
+            print('================================')
+        for data in a:
+            print(str(data.kode_barang_ids.kode_barang)+' '+str(data.jumlah))
+            data.kode_barang_ids.stok += data.jumlah
+        record = super(penjualan,self).write(vals)
+
+    def write(self, vals):
+        for rec in self:
+            a = self.env('minimarket.penjualandetail').search(
+                [('no_penjualan', '=',rec.id)])
+            print(a)
+            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+        for datab in a:
+            print(str(datab.kode_barang_ids.kode_barang)+' '+str(datab.jumlah))
+            datab.kode_barang_ids.stok -= datab.jumlah
+        return super(penjualan, self).write(vals)
+
+
 
     @api.depends('pengguna_id')
     def _compute_is_member(self):
