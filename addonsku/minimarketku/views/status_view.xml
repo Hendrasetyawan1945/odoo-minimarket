@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="status_tree_inherit" model="ir.ui.view">
+        <field name="name">status_form_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='jabatan']" position="after">
+            <field name="status_pekerjaan"/>
+        </xpath>
+        <xpath expr="//field[@name='user_id']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath> 
+
+        <!-- Mengubah name pada field -->
+        <xpath expr="//field[@name='display_name']" position="attributes">
+            <attribute name="string">Jeneng</attribute>
+        </xpath>
+
+        </field>
+    </record>
+    
+    <record id="status_form_inherit" model="ir.ui.view">
+        <field name="name">status_form_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='jabatan']" position="after">
+            <field name="status_pekerjaan"/>
+        </xpath>
+        <xpath expr="//field[@name='vat']" position="attributes"> <!-- melakukan agar field tidak terlihat -->
+            <attribute name="invisible">1</attribute>
+        </xpath> 
+        </field>
+    </record> 
+
+    <record id="status_action" model="ir.actions.act_window">
+        <field name="name">Status Pekerja</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="status_menu"
+        name="Status Karyawan"
+        action="status_action"
+        parent="karyawan_root"
+        sequence="35" />
+</odoo>
