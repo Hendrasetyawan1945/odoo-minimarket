@@ -65,7 +65,8 @@ class penjualandetail(models.Model):
     def _checkpemjualan(self):
         for i in self:
             if i.jumlah < 1:
-                raise ValidationError('Maaf keranjang harus di isi tidak boleh 0 !!! silakan masukan {} jumlah'.format(i.nama_barangpenjualan.kode_barang))
-            elif (i > i.nama_barangpenjualan.stok):
-                raise ValidationError('Stok barang {} tidak mencukupi, hanya tersedia {} {}'.format(
-                    i.nama_barangpenjualan.kode_barang, i.nama_barangpenjualan.stok,i.nama_barangpenjualan.satuan))
+                raise ValidationError(
+                    'Maaf pembelian {} dan keranjang harus di isi tidak boleh 0 !!!'.format(i.kode_barang_ids.nama_barang))
+            elif (i.jumlah > i.kode_barang_ids.stok):
+                raise ValidationError('Stok barang {} tidak mencukupi, hanya tersedia {} {}'
+                            .format(i.kode_barang_ids.nama_barang, i.kode_barang_ids.stok, i.kode_barang_ids.satuan))
