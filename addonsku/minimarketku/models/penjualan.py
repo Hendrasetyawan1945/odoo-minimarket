@@ -61,14 +61,9 @@ class penjualan(models.Model):
             for i in a:
                 print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
                 i.kode_barang_ids.stok += i.jumlah
-        record = super(penjualan, self).unlink()
-
-    def unlink(self):
-        print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
         if self.status == 'done':
-            raise ValidationError(
-                "Tidak dapat menghapus karena status pembelian 'Done' !!!")
-        return super(penjualan, self).unlink()
+            raise ValidationError("Tidak dapat menghapus karena status pembelian 'Done' !!!")
+        record = super(penjualan, self).unlink()
 
     #write untuk mengedit suatu record
     def write(self, vals):
@@ -76,18 +71,14 @@ class penjualan(models.Model):
             a = self.env('minimarket.penjualandetail').search(
                 [('no_penjualan', '=',rec.id)])
             print(a)
-            print('================================')
         for data in a:
             print(str(data.kode_barang_ids.kode_barang)+' '+str(data.jumlah))
             data.kode_barang_ids.stok += data.jumlah
         record = super(penjualan,self).write(vals)
-
-    def write(self, vals):
         for rec in self:
             a = self.env('minimarket.penjualandetail').search(
                 [('no_penjualan', '=',rec.id)])
             print(a)
-            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
         for datab in a:
             print(str(datab.kode_barang_ids.kode_barang)+' '+str(datab.jumlah))
             datab.kode_barang_ids.stok -= datab.jumlah

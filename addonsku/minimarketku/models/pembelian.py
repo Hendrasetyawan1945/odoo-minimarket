@@ -50,13 +50,15 @@ class pembelian(models.Model):
             for i in a:
                 print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
                 i.kode_barang_ids.stok -= i.jumlah
+        if self.status == 'done':
+                raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
         record = super(pembelian, self).unlink()
 
-    def unlink(self):
-        print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
-        if self.status == 'done':
-            raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
-        return super(pembelian, self).unlink()
+    # def unlink(self):
+    #     print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
+    #     if self.status == 'done':
+    #         raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
+    #     return super(pembelian, self).unlink()
     
 
     @api.depends('kode_provinsi')
