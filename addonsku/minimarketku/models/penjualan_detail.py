@@ -61,11 +61,11 @@ class penjualandetail(models.Model):
             a.nama_barangpenjualan = a.kode_barang_ids.nama_barang
 
 
-# total = fields.Integer(compute='_compute_total', string='Total',store=True)
-
-# @api.depends('total')
-# def _compute_total(self):
-#     for record in self:
-#         a = sum(self.env['minimarket.penjualandetail'].search(
-#             [('no_penjualan', '=', record.id)]).mapped('harga_jual'))
-#         record.total = a
+    @api.constrains('jumlah')
+    def _checkpemjualan(self):
+        for i in self:
+            if i.jumlah < 1:
+                raise ValidationError('Maaf keranjang harus di isi tidak boleh 0 !!! silakan masukan {} jumlah'.format(i.nama_barangpenjualan.kode_barang))
+            elif (i > i.nama_barangpenjualan.stok):
+                raise ValidationError('Stok barang {} tidak mencukupi, hanya tersedia {} {}'.format(
+                    i.nama_barangpenjualan.kode_barang, i.nama_barangpenjualan.stok,i.nama_barangpenjualan.satuan))
