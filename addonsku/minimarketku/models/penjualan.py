@@ -68,21 +68,19 @@ class penjualan(models.Model):
     #write untuk mengedit suatu record
     def write(self, vals):
         for rec in self:
-            a = self.env('minimarket.penjualandetail').search(
-                [('no_penjualan', '=',rec.id)])
+            a = self.env('minimarket.penjualandetail').search([('no_penjualan', '=',rec.id)])
             print(a)
-        for data in a:
-            print(str(data.kode_barang_ids.kode_barang)+' '+str(data.jumlah))
-            data.kode_barang_ids.stok += data.jumlah
+            for data in a:
+                print(str(data.kode_barang_ids.kode_barang)+' '+str(data.jumlah))
+                data.kode_barang_ids.stok += data.jumlah
         record = super(penjualan,self).write(vals)
         for rec in self:
-            a = self.env('minimarket.penjualandetail').search(
-                [('no_penjualan', '=',rec.id)])
+            a = self.env('minimarket.penjualandetail').search([('no_penjualan', '=',rec.id)])
             print(a)
-        for datab in a:
-            print(str(datab.kode_barang_ids.kode_barang)+' '+str(datab.jumlah))
-            datab.kode_barang_ids.stok -= datab.jumlah
-        return super(penjualan, self).write(vals)
+            for datab in a:
+                print(str(datab.kode_barang_ids.kode_barang)+' '+str(datab.jumlah))
+                datab.kode_barang_ids.stok -= datab.jumlah
+        return record
 
 
 
