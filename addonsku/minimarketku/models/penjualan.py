@@ -77,13 +77,17 @@ class penjualan(models.Model):
                 data.kode_barang_ids.stok += data.jumlah
         record = super(penjualan,self).write(vals)
         for rec in self:
-            a = self.env['minimarket.penjualandetail'].search(
+            b = self.env['minimarket.penjualandetail'].search(
                 [('no_penjualan', '=', rec.id)])
             print(a)
+            print(b)
             print('++++++++++++++++++++++++++++++++++++++++++++++++++')
-            for datab in a:
-                print(str(datab.kode_barang_ids.kode_barang)+' '+str(datab.jumlah))
-                datab.kode_barang_ids.stok -= datab.jumlah
+            for datab in b:
+                if datab in a : #jika ada yang ditambahkan
+                    print(str(datab.kode_barang_ids.kode_barang)+' ' +str(datab.jumlah))
+                    datab.kode_barang_ids.stok -= datab.jumlah
+                else :
+                    pass #jika tidak ada perubahan maka tidak ngapa"in
         return record
 
         
