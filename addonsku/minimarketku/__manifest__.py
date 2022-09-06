@@ -21,7 +21,7 @@
     'application': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','report_xlsx'],
 
     # always loaded
     'data': [
@@ -39,12 +39,13 @@
         'views/pemasok_view.xml',
         'views/pembelian_view.xml',
 
-
         'views/manusia_view.xml',
         'views/kasir_view.xml',
         'views/komisaris_view.xml',
         'views/status_view.xml',
 
+
+        'report/report.xml',
 
         #'views/pembeliandetail_view.xml',
         #'views/dagangan_view.xml',
