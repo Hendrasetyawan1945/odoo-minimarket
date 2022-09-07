@@ -24,4 +24,10 @@
         <field name="view_id" ref="barang_datang_wizz_view_form"/>
         <field name="target">new</field>
     </record>
+
+    <menuitem id="barangdatangwizz_categ"
+            name="Kedatangan Barang"
+            parent="barang_root"
+            action="barang_datang_wizz_action"
+            sequence="40"/>
 </odoo>
