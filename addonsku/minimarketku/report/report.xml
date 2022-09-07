@@ -1,0 +1,23 @@
+<odoo>
+
+    <record id="report_pemasok_xlsx" model="ir.actions.report">
+        <field name="name">Pemasok Excel</field>
+        <field name="model">minimarket.pemasok</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">minimarketku.report_pemasok_xlsx</field>
+        <field name="report_file">minimarketku.report_pemasok_xlsx</field>
+        <field name="binding_model_id" ref="model_minimarket_pemasok"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_barang_xlsx" model="ir.actions.report">
+        <field name="name">Baeang Excel</field>
+        <field name="model">minimarket.barang</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">minimarketku.report_barang_xlsx</field>
+        <field name="report_file">minimarketku.report_barang_xlsx</field>
+        <field name="binding_model_id" ref="model_minimarket_barang"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
