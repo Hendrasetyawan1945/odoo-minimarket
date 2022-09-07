@@ -24,6 +24,9 @@
         <field name="model">minimarket.barang</field>
         <field name="arch" type="xml">
             <form string="barang_form">
+            <header>
+                <button name="%(minimarketku.barang_datang_wizz_action)d" type="action" string="Barang Datang" class="btn-info"/>
+            </header>
                 <sheet>
                     <group string="Barang">
                         <field name="kode_barang"/>

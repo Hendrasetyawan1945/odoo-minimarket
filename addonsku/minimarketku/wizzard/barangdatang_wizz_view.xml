@@ -10,7 +10,7 @@
                         <field name="jumlah"/>
                     </group>
                     <footer>
-                        <button name="barang_datang" type="object" string="Create" class="btn btn-primary"/>
+                        <button name="barang_datang" type="object" string="Create" class="btn-success"/>
                         <button string="Cancel" special="cancel" class="btn-danger"/>
                     </footer>
             </form>
@@ -27,7 +27,7 @@
 
     <menuitem id="barangdatangwizz_categ"
             name="Kedatangan Barang"
-            parent="barang_root"
+            parent="minimarket_root"
             action="barang_datang_wizz_action"
-            sequence="40"/>
+            sequence="51"/>
 </odoo>

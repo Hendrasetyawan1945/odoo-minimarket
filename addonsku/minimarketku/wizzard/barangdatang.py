@@ -11,4 +11,5 @@ class barangdatang(models.TransientModel):
 
 
     def barang_datang(self):
-        pass
+        for i in self :
+            self.env['minimarket.barang'].search([('id', '=', i.barang_id.id)]).write({'stok' : i.barang.id.stok + i.barang_id.jumlah })
