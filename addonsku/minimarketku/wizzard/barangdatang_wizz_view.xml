@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="barangdatang_wizz_view_form" model="ir.ui.view">
-        <field name="name">Kedatangan barang</field>
+    <record id="barang_datang_wizz_view_form" model="ir.ui.view">
+        <field name="name">barang_datang_wizz_view_form</field>
         <field name="model">minimarket.barangdatang</field>
         <field name="arch" type="xml">
-            <form string="Form Kedatangan Barang">
+            <form string="Kedatangan Barang">
                     <group>
                         <field name="barang_id"/>
                         <field name="jumlah"/>
                     </group>
                     <footer>
-                        <button name="barang_batang" type="object" string="Create" class="btn-success"/>
+                        <button name="barang_datang" type="object" string="Create" class="btn btn-primary"/>
                         <button string="Cancel" special="cancel" class="btn-danger"/>
                     </footer>
             </form>
         </field>
     </record>
-
-    <record id="barangdatang_wizz_action" model="ir.actions.act_window">
-        <field name="name">Kedatangan barang</field>
+    <record id="barang_datang_wizz_action" model="ir.actions.act_window">
+        <field name="name">Barang Datang</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">minimarket.barangdatang</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="barangdatang_wizz_view_form"/> <!--MEMASUKAN DARI ID FORM-->
+        <field name="view_id" ref="barang_datang_wizz_view_form"/>
         <field name="target">new</field>
     </record>
 </odoo>

@@ -10,5 +10,5 @@ class barangdatang(models.TransientModel):
     jumlah = fields.Integer(string='Jumlah')
 
 
-def barang_datang(self):
-    pass
+    def barang_datang(self):
+        pass
