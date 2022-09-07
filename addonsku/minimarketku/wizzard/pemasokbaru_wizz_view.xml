@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="pemasokbaru_wizz_view_form" model="ir.ui.view">
+        <field name="name">barang_datang_wizz_view_form</field>
+        <field name="model">minimarket.pemasokbaru</field>
+        <field name="arch" type="xml">
+            <form string="Pemasok">
+                    <group>
+                        <field name="pemasok_id"/>
+                        <field name="alamat"/>
+                    </group>
+                    <footer>
+                        <button name="pemasok_baru" type="object" string="Create" class="btn-success"/>
+                        <button string="Cancel" special="cancel" class="btn-danger"/>
+                    </footer>
+            </form>
+        </field>
+    </record>     
+
+        <record id="pemasokbaru_wizz_action" model="ir.actions.act_window">
+            <field name="name">Pemasok baru</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">minimarket.pemasokbaru</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="pemasokbaru_wizz_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem id="pemasokwizz_categ"
+            name="Pemasok baru"
+            parent="wizzard_root"
+            action="pemasokbaru_wizz_action"
+            sequence="20"/>
+</odoo>

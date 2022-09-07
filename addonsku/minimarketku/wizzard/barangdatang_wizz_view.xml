@@ -27,7 +27,7 @@
 
     <menuitem id="barangdatangwizz_categ"
             name="Kedatangan Barang"
-            parent="minimarket_root"
+            parent="wizzard_root"
             action="barang_datang_wizz_action"
-            sequence="51"/>
+            sequence="10"/>
 </odoo>

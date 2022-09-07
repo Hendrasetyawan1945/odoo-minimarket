@@ -26,6 +26,11 @@
         name="Karyawan"
         parent="minimarket_root"
         sequence="50" />
+        <menuitem
+        id="wizzard_root"
+        name="Wizzard"
+        parent="minimarket_root"
+        sequence="60" />
     
 
 

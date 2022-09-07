@@ -48,6 +48,7 @@
         'report/report.xml',
 
         'wizzard/barangdatang_wizz_view.xml',
+        'wizzard/pemasokbaru_wizz_view.xml'
 
         #'views/pembeliandetail_view.xml',
         #'views/dagangan_view.xml',
