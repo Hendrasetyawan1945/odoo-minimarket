@@ -26,7 +26,7 @@ class daftarbarang(models.AbstractModel):
             row += 1
             col = 0
             sheet.write(row, col, obj.kode_barang)
-            sheet.write(row, col+1, obj.Nama_barang)
+            sheet.write(row, col+1, obj.nama_barang)
             sheet.write(row, col+2, obj.satuan)
             sheet.write(row, col+3, obj.harga_beli)
             sheet.write(row, col+4, obj.harga_jual)
