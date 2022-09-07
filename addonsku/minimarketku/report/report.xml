@@ -11,7 +11,7 @@
     </record>
 
     <record id="report_barang_xlsx" model="ir.actions.report">
-        <field name="name">Baeang Excel</field>
+        <field name="name"> Excel</field>
         <field name="model">minimarket.barang</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">minimarketku.report_barang_xlsx</field>
