@@ -25,7 +25,7 @@
             <form string="_form">
                 <sheet>
                     <group string="Kategori pelanggan">
-<!--                        <field name="no_notaids"/>-->
+                        <!-- <field name="no_notaids"/> -->
                         <field name="membership"/>
                         <field name="nama_member" attrs="{'invisible' : [('membership', '=' ,True)]}"/>
                         <field name="pengguna_id" attrs="{'invisible' : [('membership', '=' ,False)]}"/>
