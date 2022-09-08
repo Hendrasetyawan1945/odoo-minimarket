@@ -21,7 +21,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">minimarket.barangdatang</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="barang_datang_wizz_view_form"/>
+        <field name="view_id" ref="minimarketku.barang_datang_wizz_view_form"/>
         <field name="target">new</field>
     </record>
 

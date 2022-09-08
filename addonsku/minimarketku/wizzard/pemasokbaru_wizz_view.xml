@@ -23,7 +23,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">minimarket.pemasokbaru</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="pemasokbaru_wizz_view_form"/>
+            <field name="view_id" ref="minimarketku.pemasokbaru_wizz_view_form"/>
             <field name="target">new</field>
         </record>
 

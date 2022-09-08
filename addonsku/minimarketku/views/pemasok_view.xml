@@ -24,6 +24,9 @@
         <field name="model">minimarket.pemasok</field>
         <field name="arch" type="xml">
             <form string="_form">
+            <header>
+                <button name="%(minimarketku.pemasokbaru_wizz_action)d" type="action" string="Pemasok Baru" class="btn-warning"/>
+            </header>
                 <sheet>
                     <group string="Kode pemasok">
                         <field name="kode_pemasok"/>
