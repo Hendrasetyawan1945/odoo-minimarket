@@ -39,4 +39,15 @@
         <field name="binding_model_id" ref="model_minimarket_penjualan"/>
         <field name="binding_type">report</field>
     </record>
+
+    <record id="report_pembelian_pdf" model="ir.actions.report">
+        <field name="name"> Pembelian PDF</field>
+        <field name="model">minimarket.pembelian</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">minimarketku.report_pembelian_pdf</field>
+        <field name="report_file">minimarketku.report_pembelian_pdf</field>
+        <field name="binding_model_id" ref="model_minimarket_pembelian"/>
+        <field name="binding_type">report</field>
+    </record>
+
 </odoo>
