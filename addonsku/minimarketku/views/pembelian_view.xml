@@ -23,6 +23,14 @@
         <field name="model">minimarket.pembelian</field>
         <field name="arch" type="xml">
             <form string="pembelian_form">
+            <header>
+            <button string="Confirm" name="action_confirm" type="object" status="draf"/> <!--Untuk merubah menjadi confim -->
+            <button string="Done" name="action_done" type="object" status="confim"/>
+            <button string="Cancel" name="action_cancel" type="object" confirm="Apakah anda akan membatalkan pembelian?" status="confirm,done" />
+            <button string="Draf" name="action_draf" type="object" confirm="Apakah yakin anda akan mengembalikan transaksi ini ke draf ?" status="cancel"/> 
+
+            <field name="status" widget="statusbar" statusbar_visible="draf,confirm,done" />
+            </header>
                 <sheet>
                     <group>
                         <!-- <field name="no_masuk_ids"/> -->

@@ -32,8 +32,12 @@ class pembelian(models.Model):
         compute='_compute_total',
         string='Total',
         required=False)
+
     status = fields.Selection(string='Status', 
-    selection=[('draf', 'Draf'), ('done', 'Done')])
+    selection=[('draf', 'Draf'), ('done', 'Done'),('confirm','Confirm'),('cancel',('Cancel'))],
+    required=True,
+    readonly=True,
+    default='draf')
         
     user_id = fields.Many2one(
         comodel_name='minimarket.pengguna',
@@ -81,6 +85,17 @@ class pembelian(models.Model):
                 [('no_pembelian', '=', record.id)]).mapped('subtotal'))
             record.total = a
     
+    #BARIS STATUS 
+    def action_confirm(self):
+        self.write({'status': 'confirm'})
+    
+    def action_done(self):
+        self.write({'status': 'done'})
 
+    def action_cancel(self):
+        self.write({'status': 'cancel'})
+    
+    def action_draf(self):
+        self.write({'status': 'draf'})
     
     
