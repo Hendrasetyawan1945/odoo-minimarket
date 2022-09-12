@@ -33,8 +33,8 @@ class pembelian(models.Model):
         string='Total',
         required=False)
 
-    status = fields.Selection(string='Status', 
-    selection=[('draf', 'Draf'), ('done', 'Done'),('confirm','Confirm'),('cancel',('Cancel'))],
+    state = fields.Selection(string='Status', 
+    selection=[('draf', 'Draf'), ('done', 'Done'),('confirm','Confirm'),('cancel', 'Cancel')],
     required=True,
     readonly=True,
     default='draf')
@@ -45,18 +45,21 @@ class pembelian(models.Model):
         required=False)
     
     def unlink(self):
-        if self.no_masuk_ids:
-            a = []
-            for x in self:
-                a = self.env['minimarket.pembeliandetail'].search(
-                    [('no_pembelian', '=', x.id)])
-                print(a)
-            for i in a:
-                print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
-                i.kode_barang_ids.stok -= i.jumlah
-        if self.status == 'done':
-                raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
-        record = super(pembelian, self).unlink()
+        if self.filtered(lambda line: line.state != 'draf'):
+            raise ValidationError("Maaf tidak dapat menghapus record pembelian silahkan kembalikan de Draf !!!")
+        else:
+            if self.no_masuk_ids:
+                a = []
+                for x in self:
+                    a = self.env['minimarket.pembeliandetail'].search(
+                        [('no_pembelian', '=', x.id)])
+                    print(a)
+                for i in a:
+                    print(str(i.kode_barang_ids.kode_barang)+' '+str(i.jumlah))
+                    i.kode_barang_ids.stok -= i.jumlah
+            # if self.statu == 'done':
+            #         raise ValidationError("tidak dapat menghapus karena status pembelian 'Done' !!!")
+            record = super(pembelian, self).unlink()
 
     # def unlink(self):
     #     print("tes Validasion error !!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -87,15 +90,15 @@ class pembelian(models.Model):
     
     #BARIS STATUS 
     def action_confirm(self):
-        self.write({'status': 'confirm'})
+        self.write({'state': 'confirm'})
     
     def action_done(self):
-        self.write({'status': 'done'})
+        self.write({'state': 'done'})
 
     def action_cancel(self):
-        self.write({'status': 'cancel'})
+        self.write({'state': 'cancel'})
     
     def action_draf(self):
-        self.write({'status': 'draf'})
+        self.write({'state': 'draf'})
     
     
